@@ -26,7 +26,7 @@ async function activate(context) {
 			//const promptCode = highlighted.replace(/\n/g, ' ')
 			console.log(highlighted.replaceAll(' ', ''));
 			
-			const url = "http://localhost:8080/time-complexity";
+			const url = "https://vscodeextensionserver.onrender.com/time-complexity";
 
 			const options = {
 				url: url,
