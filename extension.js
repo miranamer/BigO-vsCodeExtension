@@ -25,8 +25,6 @@ async function activate(context) {
 			const highlighted = editor.document.getText(selectionRange);
 			//const promptCode = highlighted.replace(/\n/g, ' ')
 			console.log(highlighted.replaceAll(' ', ''));
-
-			vscode.window.showInformationMessage("Successfully Selected Highlighted Text");
 			
 			const url = "http://localhost:8080/time-complexity";
 
@@ -45,6 +43,7 @@ async function activate(context) {
 			axios(options)
 				.then(response => {
 				console.log(response.data);
+				vscode.window.showInformationMessage(`Time Complexity => ${response.data.data}`);
 				});
 			}
 	})

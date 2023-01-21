@@ -2,6 +2,7 @@
   "name": "bigo",
   "displayName": "BigO",
   "description": "Calculate Time Complexity In VS Code using GPT-3",
+  "publisher": "MiranAmer",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.74.0"
@@ -22,7 +23,7 @@
       },
       {
         "command": "bigo.copyText",
-        "title": "Copy Doc Text"
+        "title": "Get BigO() - Time Complexity"
       }
     ]
   },
