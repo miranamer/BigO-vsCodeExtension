@@ -44,6 +44,18 @@ https://user-images.githubusercontent.com/91673777/213876020-49b30c9d-753d-4770-
 https://user-images.githubusercontent.com/91673777/213876288-59d3dacd-a76a-4fe5-bbab-fc85621be5f8.mp4
 
 
+<h1>Using Algorithm Names:</h1>
+
+
+
+
+
+
+https://user-images.githubusercontent.com/91673777/213880495-333aab5c-8f0f-4c2b-9115-57060ba1c7ba.mp4
+
+
+
+
 
 <h1>Future Ideas</h1>
 <ul>
