@@ -9,6 +9,7 @@
 <h1>How To Use It?</h1>
 <ol>
 
+  <li>Reload VS Code Before Using (may be slow at first as server is starting up)</li>
   <li>Highlight the code you want to evaluate</li>
   <li>Click ctrl+shift+p whilst code is highlighted</li>
   <li>type 'Get BigO() - Time Complexity'</li>
@@ -19,6 +20,15 @@
 
 <h1>Tip</h1>
 <p>If Your Algorithm Takes In A Data Structure As A Parameter, Also Select The Data Structure In The Highlighted Text, Otherwise GPT-3 Wont Know The Length Of The DS.</p>
+
+<h2>Example: Don't Do This</h2>
+
+![image](https://user-images.githubusercontent.com/91673777/213878892-f75ab8aa-51a3-4837-9ef8-90f88f035a07.png)
+
+<h2>DO THIS:</h2>
+
+![image](https://user-images.githubusercontent.com/91673777/213878995-8ed56054-408a-418d-a2f9-5f8ffb823f4b.png)
+
 
 <h1>Demo Vid</h1>
 
