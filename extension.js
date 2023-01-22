@@ -26,7 +26,7 @@ async function activate(context) {
 			const selectionRange = new vscode.Range(selection.start.line, selection.start.character, selection.end.line, selection.end.character);
 			const highlighted = editor.document.getText(selectionRange);
 			//const promptCode = highlighted.replace(/\n/g, ' ')
-			console.log(highlighted.replaceAll(' ', ''));
+			//console.log(highlighted.replaceAll(' ', ''));
 			
 			const url = "https://vscodeextensionserver.onrender.com/time-complexity";
 
@@ -44,7 +44,7 @@ async function activate(context) {
 			
 			axios(options)
 				.then(response => {
-				console.log(response.data);
+				//console.log(response.data);
 				vscode.window.showInformationMessage(`Time Complexity => ${response.data.data}`);
 				});
 			}
@@ -61,7 +61,7 @@ async function activate(context) {
 		var selection = editor.selection;
 		var text = editor.document.getText(selection);
 
-		console.log(text)
+		//console.log(text)
 
 		// Send the selected text to the OpenAI API
 		await axios.post('https://api.openai.com/v1/engines/text-davinci-003/completions', {
@@ -83,7 +83,7 @@ async function activate(context) {
 			.then(response => {
 			// Get the optimized code snippet from the API response
 			var optimizedCode = response.data.choices[0].text;
-			console.log(optimizedCode)
+			//console.log(optimizedCode)
 
 			// Create a new editor window and show it
 			vscode.workspace.openTextDocument({ content: optimizedCode }).then(doc => {
