@@ -1,5 +1,7 @@
 const vscode = require('vscode');
 const axios = require("axios");
+const config = require('./keys_config.json');
+const apiKey = config.apiKey;
 
 /**
  * @param {vscode.ExtensionContext} context
@@ -48,7 +50,49 @@ async function activate(context) {
 			}
 	})
 
-	context.subscriptions.push(disposable, copyTextCommand);
+	let optimise = vscode.commands.registerCommand('bigo.optimizeCode', async function () {
+		var editor = vscode.window.activeTextEditor;
+		if (!editor) {
+			vscode.window.showErrorMessage('No editor is active');
+			return;
+		}
+
+		// Get the selected text
+		var selection = editor.selection;
+		var text = editor.document.getText(selection);
+
+		console.log(text)
+
+		// Send the selected text to the OpenAI API
+		await axios.post('https://api.openai.com/v1/engines/text-davinci-003/completions', {
+			prompt: `Make the following code as efficient as possible and as fast as possible.
+					${text.replaceAll(' ', '')}
+					###
+					`,
+			temperature: 0.5,
+			max_tokens: 2048,
+			top_p: 1,
+			frequency_penalty: 0,
+			presence_penalty: 0
+		}, {
+			headers: {
+			'Content-Type': 'application/json',
+			'Authorization': `Bearer ${apiKey}`
+			}
+		})
+			.then(response => {
+			// Get the optimized code snippet from the API response
+			var optimizedCode = response.data.choices[0].text;
+			console.log(optimizedCode)
+
+			// Create a new editor window and show it
+			vscode.workspace.openTextDocument({ content: optimizedCode }).then(doc => {
+				vscode.window.showTextDocument(doc, { viewColumn: vscode.ViewColumn.Beside });
+			});
+		});
+	})
+
+	context.subscriptions.push(disposable, copyTextCommand, optimise);
 }
 
 function deactivate() {}

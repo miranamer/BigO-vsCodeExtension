@@ -12,7 +12,8 @@
   ],
   "activationEvents": [
     "onCommand:bigo.BigO",
-    "onCommand:bigo.copyText"
+    "onCommand:bigo.copyText",
+    "onCommand:bigo.optimizeCode"
   ],
   "main": "./extension.js",
   "contributes": {
@@ -24,6 +25,10 @@
       {
         "command": "bigo.copyText",
         "title": "Get BigO() - Time Complexity"
+      },
+      {
+        "command": "bigo.optimizeCode",
+        "title": "Optimise Code Efficiency!"
       }
     ]
   },
