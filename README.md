@@ -1,22 +1,31 @@
-# BigO() - VS Code Extension
+# BigO() - VS Code Extension [BETA] v2.0.0
 
 <h1>Download Link</h1>
 <p>https://marketplace.visualstudio.com/items?itemName=MiranAmer.bigo</p>
 
 <h1>What This Does?</h1>
-<p>This VS Code extension allows you to determine the time complexity of a your code (using Big O() notation). It does this by sending the code you highlight over to GPT-3, an AI model made by OpenAI. This then sends back the time complexity of the function which is shown in the bottom right of the IDE.</p>
+<p>This VS Code extension allows you to determine the time complexity of a your code (using Big O() notation) and also produces a more optimised version of your code. It does this by sending the code you highlight over to GPT-3, an AI model made by OpenAI. This then sends back the time complexity of the function which is shown in the bottom right of the IDE. If you choose to optimise it, GPT-3 will send back a more time efficient version of your code in a new editor on the right.</p>
 
-<h1>How To Use It?</h1>
-<ol>
-
-  <li>Reload VS Code Before Using (may be slow at first as server is starting up)</li>
-  <li>Highlight the code you want to evaluate</li>
-  <li>Click ctrl+shift+p whilst code is highlighted</li>
-  <li>type 'Get BigO() - Time Complexity'</li>
-  <li>Select It</li>
-  <li>Wait For Result, It Will Appear On Bottom Right</li>
-
-</ol>
+<h1>How To Use The Features:</h1>
+  
+  <h2>How To Get Time Complexity</h2>
+  <ol>
+    <li>Reload VS Code After Downloading (may be slow at first as server is starting up)</li>
+    <li>Highlight The Code You Want To Evaluate</li>
+    <li>Click Ctrl+Shift+P Whilst Code Is Highlighted</li>
+    <li>type 'Get BigO() - Time Complexity'</li>
+    <li>Select It</li>
+    <li>Wait For Result, It Will Appear On Bottom Right</li>
+   </ol>
+   
+  <h2>NEW: How To Get More Efficient Code (v2.0.0)</h2>
+  <ol>
+    <li>Highlight The Code You Want To Optimise</li>
+    <li>Click Ctrl+Shift+P Whilst Code Is Highlighted</li>
+    <li>Type 'Optimise Code Efficiency'</li>
+    <li>Select It</li>
+    <li>Wait For Result, New Editor Will Appear With Faster Code On The Right</li>
+   </ol>
 
 <h1>Tip</h1>
 <p>If Your Algorithm Takes In A Data Structure As A Parameter, Also Select The Data Structure In The Highlighted Text, Otherwise GPT-3 Wont Know The Length Of The DS.</p>
@@ -55,6 +64,14 @@ https://user-images.githubusercontent.com/91673777/213880495-333aab5c-8f0f-4c2b-
 
 
 
+<h1>Using Optimise Code Feature</h1>
+
+
+
+https://user-images.githubusercontent.com/91673777/213917298-82974a62-c045-4586-9f1d-3fe4b90d6633.mp4
+
+
+<p>in this case, the time complexity decreased from O(n^2) -> O(n), hence making the solution faster
 
 
 <h1>Future Ideas</h1>
