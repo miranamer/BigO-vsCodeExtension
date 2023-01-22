@@ -2,8 +2,13 @@
   "name": "bigo",
   "displayName": "BigO",
   "description": "Calculate Time Complexity In VS Code using GPT-3",
+  "icon": "images/resized_logo.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miranamer/BigO-vsCodeExtension"
+  },
   "publisher": "MiranAmer",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "engines": {
     "vscode": "^1.74.0"
   },
@@ -13,7 +18,11 @@
   "activationEvents": [
     "onCommand:bigo.BigO",
     "onCommand:bigo.copyText",
-    "onCommand:bigo.optimizeCode"
+    "onCommand:bigo.optimizeCode",
+    "onCommand:bigo.readableCode",
+    "onCommand:bigo.debugCode",
+    "onCommand:bigo.convertCode",
+    "onCommand:bigo.solveCode"
   ],
   "main": "./extension.js",
   "contributes": {
@@ -29,6 +38,22 @@
       {
         "command": "bigo.optimizeCode",
         "title": "Optimise Code Efficiency!"
+      },
+      {
+        "command": "bigo.readableCode",
+        "title": "Make Code More Readable"
+      },
+      {
+        "command": "bigo.debugCode",
+        "title": "Debug Code"
+      },
+      {
+        "command": "bigo.convertCode",
+        "title": "Convert Code To Another Language"
+      },
+      {
+        "command": "bigo.solveCode",
+        "title": "Solve A Programming Problem"
       }
     ]
   },

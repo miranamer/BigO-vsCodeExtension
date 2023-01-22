@@ -92,7 +92,191 @@ async function activate(context) {
 		});
 	})
 
-	context.subscriptions.push(disposable, copyTextCommand, optimise);
+	let readability = vscode.commands.registerCommand('bigo.readableCode', async function () {
+		var editor = vscode.window.activeTextEditor;
+		if (!editor) {
+			vscode.window.showErrorMessage('No editor is active');
+			return;
+		}
+
+		// Get the selected text
+		var selection = editor.selection;
+		var text = editor.document.getText(selection);
+
+		var readableCode;
+
+		//console.log(text)
+
+		// Send the selected text to the OpenAI API
+		await axios.post('https://api.openai.com/v1/engines/text-davinci-003/completions', {
+			prompt: `Make the following code as readable as possible and add any necessary comments to explain it.
+					${text.replaceAll(' ', '')}
+					###
+					`,
+			temperature: 0.5,
+			max_tokens: 2048,
+			top_p: 1,
+			frequency_penalty: 0,
+			presence_penalty: 0
+		}, {
+			headers: {
+			'Content-Type': 'application/json',
+			'Authorization': `Bearer ${apiKey}`
+			}
+		})
+			.then(response => {
+			// Get the optimized code snippet from the API response
+			readableCode = response.data.choices[0].text;
+			//console.log(readableCode)
+
+		});
+
+		// Create a new editor window and show it
+		vscode.workspace.openTextDocument({ content: readableCode }).then(doc => {
+			vscode.window.showTextDocument(doc, { viewColumn: vscode.ViewColumn.Beside });
+		});
+	})
+
+	let debugging = vscode.commands.registerCommand('bigo.debugCode', async function () {
+		var editor = vscode.window.activeTextEditor;
+		if (!editor) {
+			vscode.window.showErrorMessage('No editor is active');
+			return;
+		}
+
+		// Get the selected text
+		var selection = editor.selection;
+		var text = editor.document.getText(selection);
+
+		var debuggedCode;
+
+		//console.log(text)
+
+		// Send the selected text to the OpenAI API
+		await axios.post('https://api.openai.com/v1/engines/text-davinci-003/completions', {
+			prompt: `Debug the following code by fixing the errors.
+					${text.replaceAll(' ', '')}
+					###
+					`,
+			temperature: 0.5,
+			max_tokens: 2048,
+			top_p: 1,
+			frequency_penalty: 0,
+			presence_penalty: 0
+		}, {
+			headers: {
+			'Content-Type': 'application/json',
+			'Authorization': `Bearer ${apiKey}`
+			}
+		})
+			.then(response => {
+			// Get the optimized code snippet from the API response
+			debuggedCode = response.data.choices[0].text;
+			//console.log(debuggedCode)
+
+		});
+
+		// Create a new editor window and show it
+		vscode.workspace.openTextDocument({ content: debuggedCode }).then(doc => {
+			vscode.window.showTextDocument(doc, { viewColumn: vscode.ViewColumn.Beside });
+		});
+	})
+
+
+	let converter = vscode.commands.registerCommand('bigo.convertCode', async function () {
+		var editor = vscode.window.activeTextEditor;
+		if (!editor) {
+			vscode.window.showErrorMessage('No editor is active');
+			return;
+		}
+
+		// Get the selected text
+		var selection = editor.selection;
+		var text = editor.document.getText(selection);
+
+		var convertedCode;
+
+		//console.log(text)
+
+		// Send the selected text to the OpenAI API
+		await axios.post('https://api.openai.com/v1/engines/text-davinci-003/completions', {
+			prompt: `Convert the following code into the commented programming language placed on top of the code.
+					${text.replaceAll(' ', '')}
+					###
+					`,
+			temperature: 0.5,
+			max_tokens: 2048,
+			top_p: 1,
+			frequency_penalty: 0,
+			presence_penalty: 0
+		}, {
+			headers: {
+			'Content-Type': 'application/json',
+			'Authorization': `Bearer ${apiKey}`
+			}
+		})
+			.then(response => {
+			// Get the optimized code snippet from the API response
+			convertedCode = response.data.choices[0].text;
+			//console.log(convertedCode)
+
+		});
+
+		// Create a new editor window and show it
+		vscode.workspace.openTextDocument({ content: convertedCode }).then(doc => {
+			vscode.window.showTextDocument(doc, { viewColumn: vscode.ViewColumn.Beside });
+		});
+	})
+
+
+	let solver = vscode.commands.registerCommand('bigo.solveCode', async function () {
+		var editor = vscode.window.activeTextEditor;
+		if (!editor) {
+			vscode.window.showErrorMessage('No editor is active');
+			return;
+		}
+
+		// Get the selected text
+		var selection = editor.selection;
+		var text = editor.document.getText(selection);
+
+		var solvedCode;
+
+		//console.log(text)
+
+		// Send the selected text to the OpenAI API
+		await axios.post('https://api.openai.com/v1/engines/text-davinci-003/completions', {
+			prompt: `Write code to solve the following problem.
+					${text}
+					###
+					`,
+			temperature: 0.5,
+			max_tokens: 2048,
+			top_p: 1,
+			frequency_penalty: 0,
+			presence_penalty: 0
+		}, {
+			headers: {
+			'Content-Type': 'application/json',
+			'Authorization': `Bearer ${apiKey}`
+			}
+		})
+			.then(response => {
+			// Get the optimized code snippet from the API response
+			solvedCode = response.data.choices[0].text;
+			//console.log(solvedCode)
+
+		});
+
+		// Create a new editor window and show it
+		vscode.workspace.openTextDocument({ content: solvedCode }).then(doc => {
+			vscode.window.showTextDocument(doc, { viewColumn: vscode.ViewColumn.Beside });
+		});
+	})
+
+
+
+	context.subscriptions.push(disposable, copyTextCommand, optimise, readability, debugging, converter, solver);
 }
 
 function deactivate() {}
