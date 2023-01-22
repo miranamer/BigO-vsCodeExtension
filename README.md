@@ -1,5 +1,9 @@
 # BigO() - VS Code Extension [BETA] v2.0.0
 
+![Chrome Text Effect Vol 7](https://user-images.githubusercontent.com/91673777/213920698-f1563b07-2d49-4144-b221-43f6df6a485d.png)
+
+
+
 <h1>Download Link</h1>
 <p>https://marketplace.visualstudio.com/items?itemName=MiranAmer.bigo</p>
 
