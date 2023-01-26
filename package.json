@@ -2,13 +2,13 @@
   "name": "bigo",
   "displayName": "BigO",
   "description": "Calculate Time Complexity In VS Code using GPT-3",
-  "icon": "images/resized_logo.png",
+  "icon": "images/text_effect_207.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/miranamer/BigO-vsCodeExtension"
   },
   "publisher": "MiranAmer",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "engines": {
     "vscode": "^1.74.0"
   },
