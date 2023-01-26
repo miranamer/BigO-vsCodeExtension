@@ -1,6 +1,7 @@
-# BigO() - VS Code Extension [BETA] v2.1.0
+# Big O - VS Code Extension [BETA] v2.1.1
 
-![Chrome Text Effect Vol 7](https://user-images.githubusercontent.com/91673777/213920698-f1563b07-2d49-4144-b221-43f6df6a485d.png)
+
+![text_effect_207 (1)](https://user-images.githubusercontent.com/91673777/214874385-fd653271-dc79-42a3-8a9e-318d8250b732.png)
 
 
 
