@@ -1,7 +1,12 @@
 # Big O - VS Code Extension [BETA] v2.2.0
 
 
-![text_effect_207 (1)](https://user-images.githubusercontent.com/91673777/214874385-fd653271-dc79-42a3-8a9e-318d8250b732.png)
+
+<h1>Trailer</h1>
+
+https://user-images.githubusercontent.com/91673777/214896944-474d700d-e6a5-4b58-801e-984d614bf138.mp4
+
+
 
 
 
