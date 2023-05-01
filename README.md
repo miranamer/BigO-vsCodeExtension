@@ -1,4 +1,4 @@
-# Big O - VS Code Extension [BETA] v2.2.0
+# Big O - VS Code Extension [BETA] v2.3.0 -> API Key Currently Expired, So Ext Will Not Work Until I Renew It OR Allow Users To Enter Theirs.
 
 
 
