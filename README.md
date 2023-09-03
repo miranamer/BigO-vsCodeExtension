@@ -1,6 +1,12 @@
-# BigO() - VS Code Extension [BETA] v2.1.0
+# Big O - VS Code Extension [BETA] v2.3.0 -> API Key Currently Expired.
 
-![Chrome Text Effect Vol 7](https://user-images.githubusercontent.com/91673777/213920698-f1563b07-2d49-4144-b221-43f6df6a485d.png)
+
+
+<h1>Trailer</h1>
+
+https://user-images.githubusercontent.com/91673777/214896944-474d700d-e6a5-4b58-801e-984d614bf138.mp4
+
+
 
 
 
