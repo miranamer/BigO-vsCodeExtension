@@ -16,20 +16,42 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:bigo.BigO",
     "onCommand:bigo.copyText",
     "onCommand:bigo.optimizeCode",
     "onCommand:bigo.readableCode",
     "onCommand:bigo.debugCode",
     "onCommand:bigo.convertCode",
-    "onCommand:bigo.solveCode"
+    "onCommand:bigo.solveCode",
+    "onCommand:bigo.setApiKey",
+    "onCommand:bigo.displayApiKey"
   ],
   "main": "./extension.js",
   "contributes": {
+    "configuration": [
+      {
+        "id": "bigo",
+        "title": "BigO Configuration",
+        "properties": {
+          "bigo.apiKey": {
+            "type": "object",
+            "default": {
+              "apiKey": ""
+            },
+            "description": "Your API Key for the BigO extension.",
+            "properties": {
+              "apiKey": {
+                "type": "string",
+                "description": "API Key"
+              }
+            }
+          }
+        }
+      }
+    ],
     "commands": [
       {
-        "command": "bigo.BigO",
-        "title": "I will tell you the Big O()!"
+        "command": "bigo.setApiKey",
+        "title": "Set API Key"
       },
       {
         "command": "bigo.copyText",
@@ -54,6 +76,10 @@
       {
         "command": "bigo.solveCode",
         "title": "Solve A Programming Problem"
+      },
+      {
+        "command": "bigo.displayApiKey",
+        "title": "Display Current API Key"
       }
     ]
   },
@@ -75,6 +101,7 @@
   },
   "dependencies": {
     "axios": "^1.2.3",
-    "clipboardy": "^3.0.0"
+    "clipboardy": "^3.0.0",
+    "openai": "^4.4.0"
   }
 }
