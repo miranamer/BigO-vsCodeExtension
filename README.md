@@ -1,4 +1,4 @@
-# Big O - VS Code Extension [BETA] v2.3.0 -> API Key Currently Expired.
+# Big O - VS Code Extension [BETA] v2.3.0 -> Add API Key First
 
 
 
@@ -8,10 +8,6 @@ https://user-images.githubusercontent.com/91673777/214896944-474d700d-e6a5-4b58-
 
 
 
-
-
-<h1>Download Link</h1>
-<p>https://marketplace.visualstudio.com/items?itemName=MiranAmer.bigo</p>
 
 <h1>What This Does?</h1>
 <p>This VS Code extension allows you to determine the time complexity of a your code (using Big O() notation) and also produces a more optimised version of your code. It does this by sending the code you highlight over to GPT-3, an AI model made by OpenAI. This then sends back the time complexity of the function which is shown in the bottom right of the IDE. If you choose to optimise it, GPT-3 will send back a more time efficient version of your code in a new editor on the right.</p>
